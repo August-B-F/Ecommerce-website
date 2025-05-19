@@ -1,0 +1,28 @@
+.inCart {
+    font-family: 'Montserrat', sans-serif;
+    display: inline-block;
+    width: 100px;
+    height: 300px;
+    background-color: rgb(30, 27, 27);
+    margin-left: 15%;
+    padding-top: 100%;
+    color: white;
+    text-align: center;
+    display:flex;
+    box-shadow: 2%;
+    position: fixed;
+    border-radius: 30px;
+    padding-left: 0%;
+}
+
+.waa{
+    padding-top: 100%;
+}
+
+
+.cart{
+    background-color: rgb(30, 27, 27);
+    height: 1500px;
+    width: 80%;
+    margin-left: 10%;
+}
