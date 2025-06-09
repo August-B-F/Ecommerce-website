@@ -2,19 +2,23 @@ import React from 'react';
 import { Container, Typography, List, ListItem, ListItemText, ListItemAvatar, Avatar, IconButton, Box, Button } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { useCart } from '../context/CartContext';
+import { NavLink } from 'react-router-dom';
 
-const Cart = () => {
+const CartPage = () => {
   const { cartItems, removeFromCart } = useCart();
 
-  const totalPrice = cartItems.reduce((total, item) => total + item.price.formatted * item.quantity, 0).toFixed(2);
+  const totalPrice = cartItems.reduce((total, item) => total + item.price.raw * item.quantity, 0).toFixed(2);
 
   return (
-    <Container sx={{ py: 8 }} maxWidth="md">
+    <Container sx={{ mt: 12, mb: 8 }} maxWidth="md">
       <Typography variant="h2" align="center" gutterBottom>
         Your Shopping Cart
       </Typography>
       {cartItems.length === 0 ? (
-        <Typography variant="h6" align="center">Your cart is empty.</Typography>
+        <Box textAlign="center" mt={5}>
+            <Typography variant="h6">Your cart is empty.</Typography>
+            <Button component={NavLink} to="/" variant="contained" sx={{ mt: 2 }}>Continue Shopping</Button>
+        </Box>
       ) : (
         <>
           <List>
@@ -36,7 +40,7 @@ const Cart = () => {
                   secondary={`Quantity: ${item.quantity}`}
                   primaryTypographyProps={{ fontWeight: 'bold' }}
                 />
-                 <Typography variant="h6">${(item.price.formatted * item.quantity).toFixed(2)}</Typography>
+                 <Typography variant="h6">${(item.price.raw * item.quantity).toFixed(2)}</Typography>
               </ListItem>
             ))}
           </List>
@@ -52,4 +56,4 @@ const Cart = () => {
   );
 };
 
-export default Cart;
+export default CartPage;

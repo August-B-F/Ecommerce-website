@@ -21,40 +21,42 @@ const UserPage = () => {
   };
 
   return (
-    <Container sx={{ py: 8 }} maxWidth="lg">
-      <Typography variant="h2" gutterBottom align="center">My Account</Typography>
-      <Paper elevation={3} sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' } }}>
-        <Tabs
-          orientation="vertical"
-          variant="scrollable"
-          value={tabValue}
-          onChange={handleTabChange}
-          sx={{ borderRight: 1, borderColor: 'divider', minWidth: 200 }}
-        >
-          <Tab icon={<AccountBoxIcon />} iconPosition="start" label="Profile Settings" />
-          <Tab icon={<ShoppingBasketIcon />} iconPosition="start" label="My Orders" />
-          <Tab icon={<FavoriteIcon />} iconPosition="start" label="Wishlist" />
-        </Tabs>
-        <Box sx={{ flexGrow: 1 }}>
-            <TabPanel value={tabValue} index={0}>
-                <Typography variant="h4" gutterBottom>Profile Information</Typography>
-                <Grid container spacing={2} sx={{ mt: 1 }}>
-                    <Grid item xs={12} sm={6}><TextField fullWidth label="First Name" defaultValue="John" /></Grid>
-                    <Grid item xs={12} sm={6}><TextField fullWidth label="Last Name" defaultValue="Doe" /></Grid>
-                    <Grid item xs={12}><TextField fullWidth label="Email Address" defaultValue="john.doe@example.com" /></Grid>
-                    <Grid item xs={12}><TextField fullWidth label="New Password" type="password" /></Grid>
-                    <Grid item xs={12}><Button variant="contained">Save Changes</Button></Grid>
-                </Grid>
-            </TabPanel>
-            <TabPanel value={tabValue} index={1}>
-                <Typography variant="h5">You have no past orders.</Typography>
-            </TabPanel>
-            <TabPanel value={tabValue} index={2}>
-                <Typography variant="h5">Your wishlist is empty.</Typography>
-            </TabPanel>
-        </Box>
-      </Paper>
-    </Container>
+    <Box sx={{ display: 'flex', alignItems: 'center', minHeight: 'calc(100vh - 128px)', py: 8 }}>
+      <Container maxWidth="lg">
+        <Typography variant="h2" gutterBottom align="center">My Account</Typography>
+        <Paper elevation={3} sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, mt: 4 }}>
+          <Tabs
+            orientation="vertical"
+            variant="scrollable"
+            value={tabValue}
+            onChange={handleTabChange}
+            sx={{ borderRight: { md: 1 }, borderBottom: { xs: 1, md: 0 }, borderColor: 'divider', minWidth: 200 }}
+          >
+            <Tab icon={<AccountBoxIcon />} iconPosition="start" label="Profile Settings" />
+            <Tab icon={<ShoppingBasketIcon />} iconPosition="start" label="My Orders" />
+            <Tab icon={<FavoriteIcon />} iconPosition="start" label="Wishlist" />
+          </Tabs>
+          <Box sx={{ flexGrow: 1 }}>
+              <TabPanel value={tabValue} index={0}>
+                  <Typography variant="h4" gutterBottom>Profile Information</Typography>
+                  <Grid container spacing={2} sx={{ mt: 1 }}>
+                      <Grid item xs={12} sm={6}><TextField fullWidth label="First Name" defaultValue="John" /></Grid>
+                      <Grid item xs={12} sm={6}><TextField fullWidth label="Last Name" defaultValue="Doe" /></Grid>
+                      <Grid item xs={12}><TextField fullWidth label="Email Address" defaultValue="john.doe@example.com" /></Grid>
+                      <Grid item xs={12}><TextField fullWidth label="New Password" type="password" /></Grid>
+                      <Grid item xs={12}><Button variant="contained">Save Changes</Button></Grid>
+                  </Grid>
+              </TabPanel>
+              <TabPanel value={tabValue} index={1}>
+                  <Typography variant="h5">You have no past orders.</Typography>
+              </TabPanel>
+              <TabPanel value={tabValue} index={2}>
+                  <Typography variant="h5">Your wishlist is empty.</Typography>
+              </TabPanel>
+          </Box>
+        </Paper>
+      </Container>
+    </Box>
   );
 };
 
