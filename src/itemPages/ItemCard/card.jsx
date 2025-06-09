@@ -1,32 +1,40 @@
 import "./itemCard.css";
 import React, { useEffect, useState } from "react";
-import axios from "axios";
-import { Link } from "react-router-dom";
+import { Grid } from "@mui/material"; 
+import Product from "../../Products/Product/Product";
+import useStyles from "../../Products/styles";
+import tempData from "../../tempData";
 
 const GetData = () => {
-  const [images, setPhoto] = useState([]);
-  const [cost, setCost] = useState([]); 
-  const [hoodieName, setHoodieName] = useState([]);
+  const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const classes = useStyles();
 
   useEffect(() => {
-    axios.get("http://127.0.0.1:5000/imagesGet").then((res) => {
-      console.log("res: ", res.data);
-      setPhoto(res.data);
-      setLoading(false);
-    })
-  }, [loading])
+    setProducts(tempData);
+    setLoading(false);
+  }, []);
+
+  const handleAddToCart = (productId, quantity) => {
+    console.log(`Added product ${productId} to cart with quantity ${quantity}`);
+  };
+
+  if (loading) {
+    return <p>Loading...</p>;
+  }
 
   return (
-    <div>
-        <ul>
-            {setPhoto.map(image => (
-              <img src="http://127.0.0.1:5000/static/hoodies/a monster hoodie (5).png" />
-            ))}
-        </ul>
-    </div>
-  )
-
-}
+    <main style={classes.content}>
+      <div style={classes.toolbar} />
+      <Grid container justifyContent="center" spacing={4}>
+        {products.map((product) => (
+          <Grid key={product.id} item xs={12} sm={6} md={4} lg={3}>
+            <Product product={product} onAddToCart={handleAddToCart} />
+          </Grid>
+        ))}
+      </Grid>
+    </main>
+  );
+};
 
 export default GetData;

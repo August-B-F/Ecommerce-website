@@ -37,60 +37,6 @@ This project is currently in development. The front-end structure is in place, w
     * ESLint for linting
     * Jest and React Testing Library for testing
 
-## Project Structure
-
-The project follows a standard Create React App structure:
-
-```
-
-ecommerce-website/
-├── public/
-│   ├── index.html        \# Main HTML file
-│   ├── manifest.json     \# Web app manifest
-│   └── robots.txt        \# Instructions for web crawlers
-│   └── favicon.ico       \# Favicon
-│   └── logo192.png       \# Logo for manifest
-│   └── logo512.png       \# Logo for manifest
-├── src/
-│   ├── App.css             \# Main app styles
-│   ├── App.js              \# Main App component
-│   ├── general.css         \# General global styles
-│   ├── index.css           \# Root index styles
-│   ├── index.js            \# Entry point of the application
-│   ├── reportWebVitals.js  \# Web vitals reporting
-│   ├── setupTests.js       \# Jest setup
-│   ├── Home/
-│   │   ├── Home.jsx        \# Homepage component
-│   │   └── homeStyle.css   \# Styles for the homepage
-│   ├── Products/
-│   │   ├── Product/
-│   │   │   ├── Product.jsx \# Single product component
-│   │   │   └── styles.js   \# Styles for single product component
-│   │   ├── Products.jsx    \# Component to display multiple products
-│   │   └── styles.js       \# Styles for products listing
-│   ├── itemPages/
-│   │   ├── Accessores.jsx
-│   │   ├── Hoodies.jsx
-│   │   ├── Sweatpants.jsx
-│   │   ├── Sweatshirts.jsx
-│   │   ├── T-shirts.jsx
-│   │   └── ItemCard/
-│   │       ├── card.jsx        \# Component for displaying item cards (appears to fetch data)
-│   │       └── itemCard.css    \# Styles for item cards
-│   ├── userUI/
-│   │   ├── Cart.jsx          \# Cart page component
-│   │   ├── User.jsx          \# User account page component
-│   │   ├── cartPreview.jsx   \# Cart preview component
-│   │   ├── cartStyle.css     \# Styles for cart components
-│   │   └── userStyle.css     \# Styles for user account page
-│   ├── hooks/
-│   │   └── useLocalStorage.js \# Custom hook for local storage
-│   └── bilder/               \# Image assets (referenced in CSS and JSX)
-├── package.json              \# Project dependencies and scripts
-└── package-lock.json         \# Exact versions of dependencies
-
-```
-
 ## Available Scripts
 
 In the project directory, you can run:

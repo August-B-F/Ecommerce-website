@@ -1,36 +1,38 @@
 import React from 'react';
-import { Card, CardMedia, CardContent, CardActions, Typography, IconButton } from '@material-ui/core';
-import { AddShoppingCart } from '@material-ui/icons';
-
-import useStyles from './styles';
+import { Box, Card, CardContent, Typography } from '@mui/material';
+import { Link as RouterLink } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import ImageWithFallback from '../../components/ImageWithFallback';
 
 const Product = ({ product, onAddToCart }) => {
-  const classes = useStyles();
-
-  const handleAddToCart = () => onAddToCart(product.id, 1);
-
   return (
-    <Card className={classes.root}>
-      <CardMedia className={classes.media} image={product.media.source} title={product.name} />
-      <CardContent>
-        <div className={classes.cardContent}>
-          <Typography gutterBottom variant="h5" component="h2">
+    <motion.div whileHover={{ y: -8 }} transition={{ duration: 0.2 }}>
+      <Card
+        sx={{
+          height: '100%', display: 'flex', flexDirection: 'column', textDecoration: 'none', bgcolor: 'background.paper',
+          borderRadius: 2, boxShadow: 'none',
+        }}
+        component={RouterLink}
+        to={`/product/${product.id}`}
+      >
+        <Box sx={{ overflow: 'hidden', borderRadius: 2 }}>
+            <ImageWithFallback
+                src={product.media.source}
+                alt={product.name}
+                style={{ width: '100%', height: 350, objectFit: 'cover', display: 'block' }}
+            />
+        </Box>
+        <CardContent sx={{ flexGrow: 1, p: 2, pt: 2 }}>
+          <Typography gutterBottom variant="h6" component="h2" sx={{ fontWeight: 'bold' }}>
             {product.name}
           </Typography>
-          <Typography gutterBottom variant="h5" component="h2">
+          <Typography variant="body1" color="text.secondary">
             ${product.price.formatted}
           </Typography>
-        </div>
-        <Typography dangerouslySetInnerHTML={{ __html: product.description }} variant="body2" color="textSecondary" component="p" />
-      </CardContent>
-      <CardActions disableSpacing className={classes.cardActions}>
-        <IconButton aria-label="Add to Cart" onClick={handleAddToCart}>
-          <AddShoppingCart />
-        </IconButton>
-      </CardActions>
-    </Card>
+        </CardContent>
+      </Card>
+    </motion.div>
   );
 };
 
 export default Product;
-

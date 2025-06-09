@@ -1,0 +1,68 @@
+const tempData = [
+    {
+      id: 1,
+      name: "Tech Fleece Hoodie",
+      description: "Lightweight warmth and a sleek, modern design.",
+      price: { formatted: "110.00" },
+      category: "Hoodie",
+      media: { source: "/images/hoodie-tech-fleece.jpg" },
+    },
+    {
+      id: 2,
+      name: "Oversized Tee",
+      description: "A comfortable, relaxed fit for everyday style.",
+      price: { formatted: "45.00" },
+      category: "T-Shirt",
+      media: { source: "/images/tee-oversized.jpg" },
+    },
+    {
+      id: 3,
+      name: "Cargo Sweatpants",
+      description: "Functional design meets ultimate comfort.",
+      price: { formatted: "95.00" },
+      category: "Sweatpant",
+      media: { source: "/images/sweatpant-cargo.jpg" },
+    },
+    {
+      id: 4,
+      name: "Yeezy Boost 350",
+      description: "The iconic sneaker that redefined footwear.",
+      price: { formatted: "220.00" },
+      category: "Shoes",
+      media: { source: "/images/shoes-yeezy-350.jpg" },
+    },
+    {
+      id: 5,
+      name: "Crewneck Sweatshirt",
+      description: "A timeless staple for any wardrobe.",
+      price: { formatted: "80.00" },
+      category: "Sweatshirt",
+      media: { source: "/images/sweatshirt-crewneck.jpg" },
+    },
+    {
+      id: 6,
+      name: "Classic Beanie",
+      description: "A warm and stylish beanie for the cold days.",
+      price: { formatted: "19.99" },
+      category: "Accessory",
+      media: { source: "/images/accessory-beanie.jpg" },
+    },
+    {
+      id: 7,
+      name: "Graphic Hoodie",
+      description: "A bold statement piece with a comfortable fit.",
+      price: { formatted: "150.00" },
+      category: "Hoodie",
+      media: { source: "/images/hoodie-spider-web.jpg" },
+    },
+    {
+      id: 8,
+      name: "Sleek Crossbody Bag",
+      description: "The perfect accessory for carrying your essentials.",
+      price: { formatted: "65.00" },
+      category: "Accessory",
+      media: { source: "/images/accessory-crossbody.jpg" },
+    },
+  ];
+  
+  export default tempData;
